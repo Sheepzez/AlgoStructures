@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<!--[if IE 9]><html class="lt-ie10" lang="en" > <![endif]-->
+<html class="no-js" lang="en" >
+
+<head>
+    <meta charset="utf-8">
+    <!-- If you delete this meta tag World War Z will become a reality -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AlgoStructures</title>
+
+    <link rel="stylesheet" href="{% static "css/app.css" %}">
+
+    <script src="{% static "js/vendor/modernizr.js" %}"></script>
+
+</head>
+<body>
+    <div class="row">
+        <div class="large-3 columns">
+            <h1><img src="http://placehold.it/400x100&text=Logo"/></h1>
+        </div>
+        <div class="large-9 columns">
+            <ul class="right button-group">
+                <li><a href="#" class="button">Link 1</a></li>
+                <li><a href="#" class="button">Link 2</a></li>
+                <li><a href="#" class="button">Link 3</a></li>
+                <li><a href="#" class="button">Link 4</a></li>
+            </ul>
+        </div>
+    </div>
+    <hr>
+    {% block content %}
+    {% endblock %}
+
+    <footer class="row">
+        <div class="large-12 columns">
+            <hr/>
+            <div class="row">
+                <div class="large-6 columns">
+                    <p>© Copyright no one at all. Go to town.</p>
+                </div>
+                <div class="large-6 columns">
+                    <ul class="inline-list right">
+                        <li><a href="#">Link 1</a></li>
+                        <li><a href="#">Link 2</a></li>
+                        <li><a href="#">Link 3</a></li>
+                        <li><a href="#">Link 4</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <script src="{% static "js/vendor/jquery.js" %}"></script>
+    <script src="{% static "js/foundation.min.js" %}"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/noisy/1.2/jquery.noisy.min.js"></script>
+    <script src="{% static "js/app.js" %}"></script>
+
+    <script>
+    $('body').noisy({
+    'intensity' : 0.25,
+    'size' : 200,
+    'opacity' : 0.08,
+    'fallback' : '',
+    'monochrome' : false
+}).css('background-color', '#EDEBDE');
+    </script>
+
+    {% block javascript %}
+    {% endblock %}
+</body>
+</html>

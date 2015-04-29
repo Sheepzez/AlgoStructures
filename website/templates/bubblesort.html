@@ -1,0 +1,30 @@
+{% extends "ADSbase.html" %}
+{% load staticfiles %}
+
+{% block javascript %}
+<script>
+$(document).ready(function(){
+  $('#algostructure').load('{% static "algorithms/sorting/bubblesort.js" %}');
+});
+
+var chart = $("#chart"),
+    aspect = chart.width() / chart.height(),
+    container = chart.parent();
+$(window).on("resize", function() {
+    var targetWidth = container.width();
+    chart.attr("width", targetWidth);
+    chart.attr("height", Math.round(targetWidth / aspect));
+}).trigger("resize");
+
+</script>
+
+<script>
+$('#algostructure').noisy({
+    'intensity' : 0.15,
+    'size' : 200,
+    'opacity' : 0.131,
+    'fallback' : '',
+    'monochrome' : false
+}).css('background-color', '#FFFFFF');
+</script>
+{% endblock %}
