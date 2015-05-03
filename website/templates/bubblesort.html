@@ -4,17 +4,17 @@
 {% block javascript %}
 <script>
 $(document).ready(function(){
-  $('#algostructure').load('{% static "algorithms/sorting/bubblesort.js" %}');
+    $('#algostructure').load('{% static "algorithms/sorting/bubblesort/algorithm.js" %}');
 });
 
-var chart = $("#chart"),
-    aspect = chart.width() / chart.height(),
-    container = chart.parent();
+/*var chart = $("#chart"),
+aspect = chart.width() / chart.height(),
+container = chart.parent();
 $(window).on("resize", function() {
     var targetWidth = container.width();
     chart.attr("width", targetWidth);
     chart.attr("height", Math.round(targetWidth / aspect));
-}).trigger("resize");
+}).trigger("resize");*/
 
 </script>
 
@@ -27,4 +27,7 @@ $('#algostructure').noisy({
     'monochrome' : false
 }).css('background-color', '#FFFFFF');
 </script>
+
+<script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+<script src="{% static "algorithms/sorting/bubblesort/visualisation.js" %}"></script>
 {% endblock %}
