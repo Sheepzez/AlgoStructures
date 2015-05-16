@@ -4,18 +4,13 @@
 {% block javascript %}
 <script>
 $(document).ready(function(){
-    $('#algostructure').load('{% static "algorithms/sorting/bubblesort/algorithm.js" %}');
+    $.get('{% static "algorithms/sorting/bubblesort/algorithm.js" %}', function(data) {
+        var lines = data.split('\n');
+        for (line in lines) {
+            $('#algostructure').append("<div id='line" + line + "'>" + lines[line] + "</div>");
+        }
+    });
 });
-
-/*var chart = $("#chart"),
-aspect = chart.width() / chart.height(),
-container = chart.parent();
-$(window).on("resize", function() {
-    var targetWidth = container.width();
-    chart.attr("width", targetWidth);
-    chart.attr("height", Math.round(targetWidth / aspect));
-}).trigger("resize");*/
-
 </script>
 
 <script>
